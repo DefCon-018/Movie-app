@@ -5,9 +5,87 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #DAE0E6;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.nav{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-color: black;
+}
+#input-fields{
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+#input-fields input{
+  padding: 8px;
+  margin: 15px;
+  width: 50%;
+  outline: none;
+  border: none;
+}
+
+button{
+  padding: 8px;
+  margin: 15px 10px 15px -80px;
+  width: 100px;
+  background-color: orange;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.movie-card{
+  margin: 20px auto;
+  width: 75%;
+  display: flex;
+  background-color: white;
+  box-shadow: 1px 1px 3px 0.5px gray;
+}
+
+.image{
+  width: 180px;
+  height: 230px;
+}
+img{
+  width: 100%;
+  height: 100%;
+}
+
+.about-movie{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.heading{
+  margin: 5px 10px;
+}
+.description, .rating, .buttons{
+  margin: 5px 10px;
+}
+
+#movie-list{
+  width: 100%;
+}
+
+.second-part{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fav-btn{
+  background-color: blueviolet;
+
 }
