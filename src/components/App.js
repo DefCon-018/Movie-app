@@ -9,8 +9,8 @@ class App extends React.Component {
 
 
   isMovieFavourite = (movie) =>{
-    const {favourites} = this.props.store.getState();
-    let index = favourites.indexOf(movie);
+    const {movies} = this.props.store.getState();
+    let index = movies.favourites.indexOf(movie);
     if(index !== -1){
       return true;
     }
@@ -35,7 +35,8 @@ class App extends React.Component {
   }
 
   render(){
-    const {showFavourites, list, favourites} = this.props.store.getState();
+    const {movies} = this.props.store.getState();
+    const {showFavourites, list, favourites} = movies;
 
     const displayMovies = showFavourites ? favourites : list;
     console.log(this.props.store.getState());
