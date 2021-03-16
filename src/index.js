@@ -10,13 +10,21 @@ import rootReducer from './reducers';
 const logger = function({dispatch, getState}){
   return function(next){
     return function(action){
-      console.log(action.type);
+      // console.log(action.type);
       next(action);
     }
   }
 }
 
-const store = createStore(rootReducer, applyMiddleware(logger));
+const thunk = ({dispatch, getState}) => (next) => (action) =>{
+  if(typeof action === 'function'){
+    action(dispatch);
+    return;
+  }
+  next(action);
+}
+
+const store = createStore(rootReducer, applyMiddleware(logger, thunk));
 // console.log('state', store.getState());
 // store.dispatch({
 //   type: 'ADD_MOVIES',
