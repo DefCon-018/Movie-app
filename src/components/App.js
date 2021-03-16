@@ -54,10 +54,9 @@ class App extends React.Component {
               key= {`movie-${index}`}
               dispatch = {this.props.store.dispatch}
               isFavourite = {this.isMovieFavourite(movie)}
-              state = {this.props.store.getState()}
             />
           ))}
-          {displayMovies.length == 0 ? <div style= {{textAlign: 'center', margin: 20, fontWeight: 700, fontSize: '1.3rem'}}>No movie to display !</div> : null}
+          {displayMovies.length === 0 ? <div style= {{textAlign: 'center', margin: 20, fontWeight: 700, fontSize: '1.3rem'}}>No movie to display !</div> : null}
         </div>
       </div>
     );
