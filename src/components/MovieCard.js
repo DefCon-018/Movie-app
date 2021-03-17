@@ -38,8 +38,8 @@ class MovieCard extends React.Component{
                         <div className= "buttons">
                             {
                                 isFavourite 
-                                ? <button className= "unfav" onClick= {this.handleUnfavouriteClick}>Unfavourite</button> 
-                                : <button className= "fav-btn" onClick= {this.handleFavouriteClick}>Favourite</button>
+                                ? <button className= "unfav btn" onClick= {this.handleUnfavouriteClick}>Unfavourite</button> 
+                                : <button className= "fav-btn btn" onClick= {this.handleFavouriteClick}>Favourite</button>
                             }
                         </div>
                     </div>

@@ -22,7 +22,7 @@ class Navbar extends React.Component{
             <div className= "nav">
                 <div id= 'input-fields'>
                     <input type= "text" placeholder= "Search..." onChange= {this.handleChange}></input>
-                    <button type= "submit" onClick= {this.handleSearch}>Search</button>
+                    <button type= "submit" className= "btn" onClick= {this.handleSearch}>Search</button>
                 </div>
             </div>
         )
