@@ -1,6 +1,6 @@
 import React from 'react';
 import { handleMovieSearch, addToMovies } from '../actions';
-import {storeContext} from '../index';
+import {connect} from '../index';
 
 class Navbar extends React.Component{
     constructor(){
@@ -27,7 +27,7 @@ class Navbar extends React.Component{
         return (
             <div className= "nav">
                 <div id= 'input-fields'>
-                    <input type= "text" placeholder= "Search..." onChange= {this.handleChange}></input>
+                    <input type= "text" placeholder= "Search..." onChange= {this.handleChange} onKeyUp= {this.handleSearch}></input>
                     <button type= "submit" className= "btn" onClick= {this.handleSearch}>Search</button>
                     {
                       showSearchResult && result.Title && 
@@ -49,14 +49,20 @@ class Navbar extends React.Component{
     }
 }
 
-class NavbarWrapper extends React.Component{
-    render(){
-        return(
-            <storeContext.Consumer>
-                {(store) => <Navbar dispatch= {store.dispatch} search= {this.props.search}/>}
-            </storeContext.Consumer>
-        )
+// class NavbarWrapper extends React.Component{
+//     render(){
+//         return(
+//             <storeContext.Consumer>
+//                 {(store) => <Navbar dispatch= {store.dispatch} search= {this.props.search}/>}
+//             </storeContext.Consumer>
+//         )
+//     }
+// }
+
+function mapStateToProps(state){
+    return {
+        search: state.search
     }
 }
 
-export default NavbarWrapper;
+export default connect(mapStateToProps)(Navbar);

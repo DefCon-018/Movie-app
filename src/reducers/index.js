@@ -40,9 +40,22 @@ export function movies(state = initialMovieState, action){
                showFavourites : action.val
            }
         case ADD_TO_MOVIES:
-            return {
-                ...state,
-                list: [action.movie, ...state.list]
+            let index = 0;
+            state.list.map((movie)=>{
+                if(movie.Title === action.movie.Title){
+                    index = -1;
+                }
+            })
+            if(index === -1){
+                return {
+                    ...state
+                }
+            }
+            else{
+                return {
+                    ...state,
+                    list: [action.movie, ...state.list]
+                }
             }
         default:
             return state;
