@@ -37,21 +37,21 @@ export function setShowFavourite(val){
 }
 
 export function handleMovieSearch(movie){
-    let url = `http://www.omdbapi.com/?apikey=3ca5df7&s=${movie}`
+    let url = `http://www.omdbapi.com/?apikey=3ca5df7&t=${movie}`
     return function(dispatch) {
        fetch(url)
         .then(response => response.json())
-        .then(movies => {
-            // console.log('movie', movies.Search);
-            dispatch(addSearchResult(movies.Search));
+        .then(movie => {
+            // console.log('movie', movie);
+            dispatch(addSearchResult(movie));
         })
     }
 }
 
-export function addSearchResult(movies){
+export function addSearchResult(movie){
     return {
         type: ADD_SEARCH_RESULT, 
-        movies
+        movie
     }
 }
 

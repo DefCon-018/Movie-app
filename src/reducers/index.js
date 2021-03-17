@@ -4,7 +4,7 @@ import {combineReducers} from 'redux';
 const initialMovieState = {
     list: [],
     favourites: [],
-    showFavourites: false
+    showFavourites: false,
 }
 
 export function movies(state = initialMovieState, action){
@@ -50,7 +50,8 @@ export function movies(state = initialMovieState, action){
 }
 
 const initialSearchState = {
-    result: []
+    result: {},
+    showSearchResult: false
 }
 
 // search Reducer
@@ -58,9 +59,14 @@ export function search(state = initialSearchState, action){
   switch(action.type){
       case ADD_SEARCH_RESULT:
           return {
-              result : action.movies
+              result : action.movie,
+              showSearchResult: true
           }
-
+       case ADD_TO_MOVIES:
+           return {
+               ...state,
+               showSearchResult: false
+           }
        default: 
           return state;   
   }  

@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
 import MovieCard from './MovieCard';
-import SearchItem from './SearchItem'
 import { data } from '../data';
 import { addMovies } from '../actions';
 import { setShowFavourite } from '../actions' 
@@ -40,20 +39,10 @@ class App extends React.Component {
     const {showFavourites, list, favourites} = movies;
 
     const displayMovies = showFavourites ? favourites : list;
-    const displaySearch = search.result;
     console.log(this.props.store.getState());
     return (
       <div className="App">
-        <Navbar dispatch= {this.props.store.dispatch} />
-        <div id= "search-container">
-          {
-            displaySearch.length > 0 && 
-            displaySearch.map((movie, index)=>(
-              // console.log(movie)
-              <SearchItem key= {`search-${index}`} movie= {movie} dispatch= {this.props.store.dispatch}/>
-            ))
-          }
-        </div>
+        <Navbar dispatch= {this.props.store.dispatch} search= {search}/>
         <div className = "tabs">
           <div className= {`tab ${showFavourites ? '' : "active-tab"}`} onClick= {()=>this.onChangeTab(false)}>Movies</div>
           <div className= {`tab ${showFavourites ? "active-tab" : ''}`} onClick= {() => this.onChangeTab(true)}>Favourites</div>
