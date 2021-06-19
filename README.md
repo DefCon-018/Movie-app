@@ -1,3 +1,40 @@
+# Movie App
+
+<p align="center">
+<img src= "https://turkogluc.com/content/images/2020/06/lz1cf2chf.png" width= "400px"> 
+</p>
+
+---
+
+### Table of Contents
+
+- [Description](#description)
+- [Features and Screenshots](#features-and-screenshots)
+- [How To Use](#getting-started-with-create-react-app)
+
+---
+
+## Description
+
+It a movie app to get the details of movies eg: movies rating, release date etc. The following actions you can perform
+1. Searching a movie
+2. Adding movie to favourite
+3. Unfavourite the favourited movie
+
+---
+
+## Features and Screenshots
+
+### 1. Home
+<img src= "/public/movies.png" width= "600">
+
+### 2. Favorite Movies
+<img src= "/public/fav.png" width= "600">
+
+### 3. Search Movie
+<img src= "/public/search.png" width= "600">
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
